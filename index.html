@@ -345,7 +345,7 @@ var P=[
 {id:2,n:"Black Handspun Pure Cashmere Wrap",p:329,op:0,c:"handspun",b:"",cl:"#1C1A18",cl2:"#2E2A26"},
 {id:3,n:"Teal Kalamkari Hand Painted Pashmina",p:1399,op:1599,c:"kalamkari",b:"sale",cl:"#2A6B6B",cl2:"#1E5252"},
 {id:4,n:"Blush Pink Solid Cashmere Scarf",p:149,op:0,c:"solid-colors",b:"",cl:"#E8C4C4",cl2:"#D4AAAA"},
-{id:5,n:"Midnight Blue Kani Weave Shawl",p:2799,op:0,c:"kani-weaves",b:"art",cl:"#1A2744",cl2:"#0F1A30"},
+{id:5,n:"Midnight Kani Weave Shawl",p:2799,op:0,c:"kani-weaves",b:"art",cl:"#1A2744",cl2:"#0F1A30"},
 {id:6,n:"Natural Grey Handspun Pashmina",p:249,op:0,c:"handspun",b:"",cl:"#A09890",cl2:"#8A827A"},
 {id:7,n:"Burgundy Tilla Dozi Gold Embroidered Shawl",p:1999,op:2399,c:"tilla-dozi",b:"sale",cl:"#5C1A2A",cl2:"#3D0E1A"},
 {id:8,n:"Sage Green Solid Pashmina Scarf",p:149,op:0,c:"solid-colors",b:"",cl:"#7A8B6F",cl2:"#5E6E54"},
@@ -428,7 +428,7 @@ document.addEventListener("DOMContentLoaded",function(){
   document.getElementById("bss").innerHTML=P.filter(function(x){return x.c==="embroidered"||x.c==="kani-weaves"||x.c==="jamavar";}).map(pch).join("");
 
   var fp=P[4];
-  document.getElementById("fpSec").innerHTML='<div class="fpg"><img src="images/featured-shawl.jpg" style="width:100%;height:100%;object-fit:cover"></div><div class="fpi"><p class="sl">Featured Masterpiece</p><h2>'+fp.n+'</h2><p class="fpr">US$ '+fp.p.toLocaleString()+'</p><p class="fds">A breathtaking Kani weave shawl, handwoven over several months by master artisans using traditional wooden needles called kani. Each pattern tells an ancient Kashmiri story through intricate interlocking twill tapestry.</p><div class="szo"><button class="szb act">100 &times; 200 cm</button><button class="szb">114 &times; 228 cm</button><button class="szb">137 &times; 274 cm</button></div><button class="bd" onclick="atcDirect(\'Midnight Blue Kani Weave Shawl\',2799,\'#1A2744\',\'#0F1A30\')">Contact us via email</button></div>';
+  document.getElementById("fpSec").innerHTML='<div class="fpg"><img src="images/featured-shawl.jpg" style="width:100%;height:100%;object-fit:cover"></div><div class="fpi"><p class="sl">Featured Masterpiece</p><h2>'+fp.n+'</h2><p class="fpr">US$ '+fp.p.toLocaleString()+'</p><p class="fds">A breathtaking Kani weave shawl, handwoven over several months by master artisans using traditional wooden needles called kani. Each pattern tells an ancient Kashmiri story through intricate interlocking twill tapestry.</p><div class="szo"><button class="szb act">100 &times; 200 cm</button><button class="szb">114 &times; 228 cm</button><button class="szb">137 &times; 274 cm</button></div><button class="bd" onclick="atcDirect(\'Midnight Kani Weave Shawl\',2799,\'#1A2744\',\'#0F1A30\')">Contact us via email</button></div>';
 
   document.getElementById("sbSec").innerHTML='<div class="sbi"><div class="sbibg" style="background:linear-gradient(135deg,#A09890,#6A6058)"></div><div class="sbov"></div><div class="sbc"><h3>Natural Grey Collection</h3><p>Pure undyed cashmere in its most honest form</p><button class="bp" onclick="sp(\'collections\')">Shop Now</button></div></div><div class="sbi"><div class="sbibg" style="background:linear-gradient(135deg,#F0E8D8,#D4C8B4)"></div><div class="sbov"></div><div class="sbc"><h3>Natural Ivory Collection</h3><p>Timeless elegance in pristine white</p><button class="bp" onclick="sp(\'collections\')">Shop Now</button></div></div>';
 
