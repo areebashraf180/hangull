@@ -341,11 +341,11 @@ Read Our Story
 
 <script>
 var P=[
-{id:1,n:"Ivory Sozni Embroidered Pashmina Shawl",p:749,op:0,c:"embroidered",b:"new",cl:"#F5EFE0",cl2:"#E8DFD0"},
-{id:2,n:"Black Handspun Pure Cashmere Wrap",p:329,op:0,c:"handspun",b:"",cl:"#1C1A18",cl2:"#2E2A26"},
-{id:3,n:"Teal Kalamkari Hand Painted Pashmina",p:1399,op:1599,c:"kalamkari",b:"sale",cl:"#2A6B6B",cl2:"#1E5252"},
-{id:4,n:"Blush Pink Solid Cashmere Scarf",p:149,op:0,c:"solid-colors",b:"",cl:"#E8C4C4",cl2:"#D4AAAA"},
-{id:5,n:"Midnight Kani Weave Shawl",p:2799,op:0,c:"kani-weaves",b:"art",cl:"#1A2744",cl2:"#0F1A30"},
+{id:1,img:"images/DSC02154.jpg",n:"Ivory Sozni Embroidered Pashmina Shawl",p:749,op:0,c:"embroidered",b:"new",cl:"#F5EFE0",cl2:"#E8DFD0"},
+{id:2,img:"images/DSC02155.jpg",n:"Black Handspun Pure Cashmere Wrap",p:329,op:0,c:"handspun",b:"",cl:"#1C1A18",cl2:"#2E2A26"},
+{id:3,img:"images/DSC02156.jpg",n:"Teal Kalamkari Hand Painted Pashmina",p:1399,op:1599,c:"kalamkari",b:"sale",cl:"#2A6B6B",cl2:"#1E5252"},
+{id:4,img:"images/DSC02157.jpg",n:"Blush Pink Solid Cashmere Scarf",p:149,op:0,c:"solid-colors",b:"",cl:"#E8C4C4",cl2:"#D4AAAA"},
+{id:5,img:"images/DSC02158.jpg",n:"Midnight Kani Weave Shawl",p:2799,op:0,c:"kani-weaves",b:"art",cl:"#1A2744",cl2:"#0F1A30"},
 {id:6,n:"Natural Grey Handspun Pashmina",p:249,op:0,c:"handspun",b:"",cl:"#A09890",cl2:"#8A827A"},
 {id:7,n:"Burgundy Tilla Dozi Gold Embroidered Shawl",p:1999,op:2399,c:"tilla-dozi",b:"sale",cl:"#5C1A2A",cl2:"#3D0E1A"},
 {id:8,n:"Sage Green Solid Pashmina Scarf",p:149,op:0,c:"solid-colors",b:"",cl:"#7A8B6F",cl2:"#5E6E54"},
@@ -401,12 +401,56 @@ var FQ=[
 
 var cart=[],af="all";
 var psv='<svg viewBox="0 0 80 80" fill="none" stroke="rgba(255,255,255,.12)" stroke-width=".5" width="48" height="48"><ellipse cx="40" cy="36" rx="28" ry="22"/><path d="M12 36c0 14 8 28 28 36"/><path d="M68 36c0 14-8 28-28 36"/></svg>';
-
 function pch(p){
-  var bc=p.b?('<span class="pcb '+p.b+'">'+({new:"New",sale:"Sale",art:"Artisan"}[p.b])+"</span>"):"";
-  var nm=p.n.replace(/"/g,"&quot;");
-  return '<div class="pc"><div class="pci"><div class="pcph" style="background:linear-gradient(145deg,'+p.cl+","+p.cl2+')">'+psv+'<span class="pclbl">Photo Coming Soon</span></div>'+bc+'<button class="pqa" onclick="event.stopPropagation();atc(this)" data-n="'+nm+'" data-p="'+p.p+'" data-c1="'+p.cl+'" data-c2="'+p.cl2+'">Contact us via email</button></div><div><h3 class="pctit">'+p.n+'</h3><p class="pcpr">'+(p.op?'<span class="og">US$ '+p.op.toLocaleString()+"</span>":"")+"US$ "+p.p.toLocaleString()+"</p></div></div>";
+
+var bc=p.b
+?('<span class="pcb '+p.b+'">'+
+({new:"New",sale:"Sale",art:"Artisan"}[p.b])+
+"</span>")
+:"";
+
+var nm=p.n.replace(/"/g,"&quot;");
+
+return `
+<div class="pc">
+
+<div class="pci">
+
+<img
+src="${p.img}"
+style="width:100%;height:100%;object-fit:cover">
+
+${bc}
+
+<button
+class="pqa"
+onclick="event.stopPropagation();atc(this)"
+data-n="${nm}"
+data-p="${p.p}"
+data-c1="${p.cl}"
+data-c2="${p.cl2}">
+
+Contact us via email
+
+</button>
+
+</div>
+
+<div>
+
+<h3 class="pctit">${p.n}</h3>
+
+<p class="pcpr">
+${p.op ? `<span class="og">US$ ${p.op.toLocaleString()}</span>` : ""}
+US$ ${p.p.toLocaleString()}
+</p>
+
+</div>
+
+</div>
+`;
 }
+
 function rh(r){return '<div class="tc fi"><div class="ts">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p class="tt">&ldquo;'+r.t+'&rdquo;</p><p class="ta">'+r.n+'</p><p class="tloc">'+r.l+"</p></div>";}
 
 function atc(el){var n=el.getAttribute("data-n"),p=parseInt(el.getAttribute("data-p")),c1=el.getAttribute("data-c1"),c2=el.getAttribute("data-c2");cart.push({n:n,p:p,c1:c1,c2:c2});ucu();oc();}
